@@ -15,6 +15,7 @@ namespace Voody.UniLeo
     {
         public ConvertMode convertMode;
         private EcsEntity? entity;
+        private EcsEntity? initialValues;
         
         private bool isProccessed = false;
         private void Start()
@@ -49,6 +50,16 @@ namespace Voody.UniLeo
         public void Set(EcsEntity entity)
         {
             this.entity = entity;
+        }
+
+        public void SetInitialValues(EcsEntity initialValues)
+        {
+            this.initialValues = initialValues;
+        }
+
+        public EcsEntity? GetInitialValues()
+        {
+            return initialValues;
         }
     }
 }

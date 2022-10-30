@@ -69,6 +69,10 @@ namespace Voody.UniLeo
                         GameObject.Destroy(component);
                     }
                 }
+
+                EcsEntity? initialValues = convertComponent.GetInitialValues();
+                if (initialValues.HasValue && initialValues.Value.IsAlive())
+                    initialValues.Value.MoveTo(entity);
                 
                 convertComponent.setProccessed();
                 switch (convertComponent.convertMode)
