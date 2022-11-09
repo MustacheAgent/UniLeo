@@ -14,6 +14,10 @@ namespace Voody.UniLeo
             {
                 this.value = value;
             }
+			get
+			{
+				return value;
+			}
         }
 
         void IConvertToEntity.Convert(EcsEntity entity)
