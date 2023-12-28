@@ -13,13 +13,13 @@ namespace Voody.UniLeo
     }
     public class ConvertToEntity : MonoBehaviour
     {
-        public ConvertMode convertMode;
+        public ConvertMode convertMode = ConvertMode.ConvertAndSave;
         private EcsEntity? entity;
         private EcsEntity? initialValues;
         
         private bool isProccessed = false;
         private void Start()
-        {
+        {			
             var world = WorldHandler.GetWorld();
             if (world != null && !isProccessed)
             {
